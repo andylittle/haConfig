@@ -1,0 +1,11 @@
+#nest:
+#
+client_id: !secret nest_client_id 
+client_secret: !secret nest_client_secret
+sensors:
+  monitored_conditions:
+    - 'temperature'
+    - 'operation_mode'
+    - 'humidity'
+    - 'hvac_state'
+    - 'target'

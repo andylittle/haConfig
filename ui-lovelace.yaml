@@ -1,0 +1,210 @@
+title: Home
+views:
+  - path: default_view
+    title: Main
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - sensor.outside_temp
+          - sensor.downstairs_thermostat_temperature
+        title: Weather
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - light.porch_light
+          - light.cree_connected_a_19_60w_equivalent_fe067982_10
+          - light.cree_connected_a_19_60w_equivalent_fe04b14c_10
+          - light.upstairs_bedroom
+          - lock.front_door   
+        title: Lights
+        show_header_toggle: true
+      - type: alarm-panel
+        entity: alarm_control_panel.home_alarm
+      - type: alarm-panel
+        entity: alarm_control_panel.shop_alarm
+      - type: entities
+        entities:
+          - sensor.hot_water_temp_out
+          - switch.hotwater
+        title: Water Temperature
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - switch.skylight
+          - switch.skylight_fan
+          - input_number.fan_run_time
+        title: Fan
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - input_number.dsbathfan_run_time
+          - switch.ds_bath_fan
+          - input_number.usbathfan_run_time
+          - switch.us_bath_fan
+        title: Bathroom Fans
+        show_header_toggle: true
+      - type: picture-entity
+        entity: camera.weather_camera_1
+      - type: picture-entity
+        entity: camera.camera_1
+      - type: picture-entity
+        entity: camera.camera_2
+  - path: alarms
+    title: Alarms
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - switch.garage_outside
+          - light.sengled_e11_g13_03074c6b_1
+          - light.sengled_e11_g13_03076ad2_1
+          - light.sengled_e11_g13_03077131_1
+          - light.sengled_e11_g13_030781cc_1
+        title: Outside Lights
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - sensor.shop_alarm_keypad
+          - binary_sensor.shop_door
+          - binary_sensor.shop_overhead
+          - binary_sensor.south_shop
+          - binary_sensor.shop_heat
+        title: Shop Alarm
+        show_header_toggle: true
+      - type: alarm-panel
+        entity: alarm_control_panel.shop_alarm
+      - type: entities
+        entities:
+          - sensor.home_alarm_keypad
+          - binary_sensor.front_door
+          - binary_sensor.east_door
+          - binary_sensor.first_floor_motion
+          - binary_sensor.north_double_door
+          - binary_sensor.laundry_room
+          - binary_sensor.bathroom
+        title: Home Alarm
+        show_header_toggle: true
+      - type: alarm-panel
+        entity: alarm_control_panel.home_alarm
+      - type: entities
+        entities:
+          - switch.coop_door
+        title: Garden
+        show_header_toggle: true
+  - path: device_tracker
+    title: Device Tracker
+    badges: []
+    cards: []
+  - path: automation
+    title: Automations
+    badges: []
+    cards: []
+  - path: indoorclimate
+    title: Indoor Climate
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - binary_sensor.downstairs_thermostat_fan
+          - binary_sensor.downstairs_thermostat_has_leaf
+          - binary_sensor.downstairs_thermostat_is_locked
+          - binary_sensor.downstairs_thermostat_is_using_emergency_heat
+          - binary_sensor.downstairs_thermostat_online
+          - sensor.downstairs_thermostat_humidity
+          - sensor.downstairs_thermostat_hvac_state
+          - sensor.downstairs_thermostat_operation_mode
+          - sensor.downstairs_thermostat_target
+          - sensor.downstairs_thermostat_temperature
+        title: Nest
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - sensor.hot_water_temp_in
+          - sensor.hot_water_temp_out
+          - sensor.cold_water_temp_in
+          - sensor.master_shower_temp
+        title: Water
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - water_heater.waterheater
+        title: WaterHeater
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - sensor.lock_front_door_status
+          - sensor.lock_front_door_battery
+          - sensor.lock_garage_door_status
+          - sensor.lock_garage_door_battery
+          - sensor.lock_shop_door_status
+          - sensor.lock_shop_door_battery
+          - sensor.lock_laundry_door_status
+          - sensor.lock_laundry_door_battery
+        title: Battery Status
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - sensor.ups_name
+          - sensor.ups_load
+          - sensor.ups_time_left
+          - sensor.ups_input_voltage
+          - sensor.ups_transfer_high
+          - sensor.ups_transfer_low
+          - sensor.ups_last_transfer
+          - sensor.ups_transfer_from_battery
+        title: UPS
+        show_header_toggle: true
+  - path: environment
+    title: Environment
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - sensor.aq_temperature_1
+          - sensor.aq_pressure_1
+          - sensor.aq_quality_1
+          - history_graph.air_quality
+          - sensor.aq_temperature_2
+          - sensor.aq_pressure_2
+          - sensor.aq_humidity_2
+          - sensor.battery_current
+          - sensor.battery_voltage
+          - history_graph.battery_voltage
+          - sensor.battery_power
+          - sensor.nest_box_1
+          - sensor.nest_box_2
+          - sensor.nest_box_3
+          - sensor.nest_box_4
+        title: Environmental
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - sensor.solaredge_current_power_template
+          - sensor.solaredge_last_day_data_template
+          - sensor.solaredge_last_month_data_template
+          - sensor.solaredge_last_year_data_template
+        title: Solar
+        show_header_toggle: true
+      - type: entities
+        entities:
+          - binary_sensor.ender_3_pro_printing
+          - binary_sensor.ender_3_pro_printing_error
+          - sensor.ender_3_pro_current_state
+          - sensor.ender_3_pro_job_percentage
+          - switch.printer_power
+        title: Ender
+        show_header_toggle: true
+      - type: picture-entity
+        entity: camera.octoprint
+      - type: entities
+        entities:
+          - switch.pool_pump
+          - switch.pool_cleaner
+          - switch.chlorine_generator
+          - switch.pool_drain
+          - sensor.pool_pressure
+          - sensor.cleaner_pressure
+        title: pool
+        show_header_toggle: true
+

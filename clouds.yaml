@@ -1,0 +1,5 @@
+google_actions:
+  filter:
+    include_entities:
+      - switch.skylight_fan    
+      - light.porch_light

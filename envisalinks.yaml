@@ -1,0 +1,50 @@
+###envisalink:
+host: !secret envisa_host 
+panel_type: !secret envisa_panel_type
+user_name: !secret envisa_user_name
+password: !secret envisa_password
+code: !secret envisa_code
+port: !secret envisa_port
+evl_version: 4
+timeout: 60
+keepalive_interval: 60
+zonedump_interval: 30
+panic_type: Police
+zones:
+  9:
+    name: 'Shop Door'
+    type: 'opening'
+  10:
+    name: 'Shop Overhead'
+    type: 'opening'
+  11:
+    name: 'South Shop'
+    type: 'opening'
+  16:
+    name: 'Shop Heat'
+    type: 'heat'
+  12:
+    name: 'Laundry Room'
+    type: 'opening'
+  13:
+    name: 'Bathroom'
+    type: 'opening'
+  21:
+    name: 'Front Door'
+    type: 'opening'
+  22:
+    name: 'East Door'
+    type: 'opening'
+  23:
+    name: 'North Double Door'
+    type: 'opening'
+  24:
+    name: 'First Floor Motion'
+    type: 'motion'
+partitions:
+  1:
+    name: 'Home Alarm'
+  2:
+    name: 'Shop Alarm'
+
+

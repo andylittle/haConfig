@@ -1,0 +1,48 @@
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+homeassistant:
+  customize: !include customize.yaml
+
+lovelace:
+  mode: yaml
+
+apcupsd:
+  host: 192.168.1.133
+  port: 3552
+
+recorder:
+  db_url: !secret db_string  #mysql://hass_user:hass_pw@localhost/hass_db
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+logger:
+  default: warning
+
+zha:
+  usb_path: /dev/zigbee
+  database_path: /home/homeassistant/.homeassistant/zigbee.db
+
+zwave:
+  usb_path: /dev/zwave
+  network_key: !secret zwave_key 
+
+automation: !include automations.yaml
+camera: !include cameras.yaml
+cloud: !include clouds.yaml
+#device_tracker: !include devicetrackers.yaml
+envisalink: !include envisalinks.yaml
+group: !include groups.yaml
+history_graph: !include history_graphs.yml
+input_number: !include input_number.yaml
+mqtt: !include mqtts.yaml
+nest: !include nest.yaml
+notify: !include notify.yaml
+octoprint: !include octoprint.yaml
+scene: !include scenes.yaml
+script: !include scripts.yaml
+sensor: !include sensors.yaml
+solaredge: !include solaredge.yaml
+switch: !include switches.yaml
+#water_heater: !include water_heater.yaml

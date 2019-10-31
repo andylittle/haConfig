@@ -1,0 +1,86 @@
+- name: House Outside Dim
+  entities:
+    light.sengled_e11_g13_03074c6b_1:
+      state: on
+      brightness: 1
+    light.sengled_e11_g13_030781cc_1:
+      state: on
+      brightness: 1
+    light.sengled_e11_g13_03077131_1:
+      state: on
+      brightness: 1
+    light.sengled_e11_g13_03076ad2_1:
+      state: on
+      brightness: 1
+- name: House Outside Bright 
+  entities:
+    light.sengled_e11_g13_03074c6b_1:
+      state: on
+      brightness: 255
+    light.sengled_e11_g13_030781cc_1:
+      state: on
+      brightness: 255
+    light.sengled_e11_g13_03077131_1:
+      state: on
+      brightness: 255
+    light.sengled_e11_g13_03076ad2_1:
+      state: on
+      brightness: 255
+
+- name: House Outside Off 
+  entities:
+    light.sengled_e11_g13_03074c6b_1:
+      state: off
+    light.sengled_e11_g13_030781cc_1:
+      state: off
+    light.sengled_e11_g13_03077131_1:
+      state: off
+    light.sengled_e11_g13_03076ad2_1:
+      state: off
+
+- name: lr_bright
+  entities:
+    light.cree_connected_a_19_60w_equivalent_fe04b14c_10:
+      state: on
+      brightness: 255
+
+- name: lr_dim
+  entities:
+    light.cree_connected_a_19_60w_equivalent_fe04b14c_10:
+      state: on
+      brightness: 60
+
+- name: lr_off
+  entities:
+    light.cree_connected_a_19_60w_equivalent_fe04b14c_10:
+      state: off
+
+- name: br_bright
+  entities:
+    light.cree_connected_a_19_60w_equivalent_fe067982_10: 
+      state: on
+      brightness: 255
+
+- name: br_dim
+  entities:
+    light.cree_connected_a_19_60w_equivalent_fe067982_10: 
+      state: on
+      brightness: 60
+
+- name: br_off
+  entities:
+    light.cree_connected_a_19_60w_equivalent_fe067982_10: 
+      state: off
+
+
+- name: lr_br_off
+  entities:
+    light.cree_connected_a_19_60w_equivalent_fe04b14c_10:
+      state: off
+    light.cree_connected_a_19_60w_equivalent_fe067982_10: 
+      state: off
+
+
+
+
+

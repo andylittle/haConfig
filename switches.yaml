@@ -1,0 +1,138 @@
+##switch:
+#- platform: mysensors
+
+- platform: mqtt
+  name: "Hotwater"
+  state_topic: "/hotwater/gpio/5"
+  command_topic: "/hotwater/gpio/5"
+  payload_on: "1"
+  payload_off: "0"
+  optimistic: false
+  qos: 0
+  retain: true
+  #d1mini-1/gpio/16 -m 1
+  #d1mini-1/gpio/16 -m 0
+
+- platform: mqtt
+  name: "Coop Door"
+  state_topic: "/garden/gpio/12"
+  command_topic: "/garden/gpio/12"
+  payload_on: "0"
+  payload_off: "1"
+  optimistic: false
+  qos: 0
+  retain: true
+
+- platform: mqtt
+  name: "Skylight"
+  state_topic: "/Fan1/gpio/12"
+  command_topic: "/Fan1/gpio/12"
+  payload_on: "0"
+  payload_off: "1"
+  optimistic: false
+  qos: 0
+  retain: true
+  # skylight spare
+  #- platform: mqtt
+  # name: "Skylight Open"
+  #state_topic: "Fan1/gpio/14"
+  #command_topic: "Fan1/gpio/14"
+  #payload_on: "0"
+  #payload_off: "1"
+  # optimistic: false
+  # qos: 0
+  #retain: true
+- platform: mqtt
+  name: "Skylight Fan"
+  state_topic: "/Fan1/gpio/13"
+  command_topic: "/Fan1/gpio/13"
+  payload_on: "1"
+  payload_off: "0"
+  optimistic: false
+  qos: 0
+  retain: true
+ 
+  #- platform: mqtt
+  #  name: "Switch Skylight2 Test"
+  #  state_topic: "d1mini-2/gpiostate/0"
+  #  command_topic: "d1mini-2/gpio/0"
+  #  payload_on: "0"
+  #  payload_off: "1"
+  #  optimistic: false
+  #  qos: 0
+  #  retain: true
+
+
+
+- platform: mqtt
+  name: "Shield Test"
+  state_topic: "/d1mini-3/gpiostate/5"
+  command_topic: "/d1mini-3/gpio/5"
+  payload_on: "1"
+  payload_off: "0"
+  optimistic: false
+  qos: 0
+  retain: true
+
+
+- platform: mqtt
+  name: "Pool Drain"
+  state_topic: "/Pool/gpio/13"
+  command_topic: "/Pool/gpio/13"
+  payload_on: "0"
+  payload_off: "1"
+  optimistic: false
+  qos: 0
+  retain: true
+
+
+- platform: mqtt
+  name: "Pool Pump"
+  state_topic: "/Pool/gpio/12"
+  command_topic: "/Pool/gpio/12"
+  payload_on: "0"
+  payload_off: "1"
+  optimistic: false
+  qos: 0
+  retain: true
+
+- platform: mqtt
+  name: "Chlorine Generator"
+  state_topic: "/Pool/gpio/14"
+  command_topic: "/Pool/gpio/14"
+  payload_on: "1"
+  payload_off: "0"
+  optimistic: false
+  qos: 0
+  retain: true
+  
+- platform: mqtt
+  name: "Pool Cleaner"
+  state_topic: "/Pool/gpio/15"
+  command_topic: "/Pool/gpio/15"
+  payload_on: "1"
+  payload_off: "0"
+  optimistic: false
+  qos: 0
+  retain: true
+
+  
+- platform: mqtt
+  name: "3d Printer Power Old"
+  state_topic: "/3dPrinter/gpio/14"
+  command_topic: "/3dPrinter/gpio/14"
+  payload_on: "1"
+  payload_off: "0"
+  optimistic: false
+  qos: 0
+  retain: true
+
+- platform: mqtt
+  name: "Printer Power"
+  state_topic: "/sonoff-1/gpio/12"
+  command_topic: "/sonoff-1/gpio/12"
+  payload_on: "1"
+  payload_off: "0"
+  optimistic: false
+  qos: 0
+  retain: true

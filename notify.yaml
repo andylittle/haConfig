@@ -1,0 +1,38 @@
+- name: andy_email
+  platform: smtp
+  server: smtp.mycci.net
+  port: 587
+  timeout: 15
+  sender: !secret smtp_sender
+  encryption: starttls
+  username: !secret smtp_username
+  password: !secret smtp_password 
+  recipient:
+    - !secret smtp_recipient
+  sender_name: My Home Assistant
+
+- name: andy_text
+  platform: smtp
+  server: smtp.mycci.net
+  port: 587
+  timeout: 15
+  sender: !secret smtp_sender
+  encryption: starttls
+  username: !secret smtp_username
+  password: !secret smtp_password 
+  recipient:
+    - !secret andy_text_recipient
+  sender_name: My Home Assistant
+
+- name: sarah_text
+  platform: smtp
+  server: smtp.mycci.net
+  port: 587
+  timeout: 15
+  sender: !secret smtp_sender
+  encryption: starttls
+  username: !secret smtp_username
+  password: !secret smtp_password 
+  recipient:
+    - !secret sarah_text_recipient
+  sender_name: My Home Assistant

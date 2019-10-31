@@ -1,0 +1,45 @@
+
+us_bath_timer:
+  alias: "Bath Fan Timer"
+  sequence:
+    - delay: '00:{{ states.input_number.usbathfan_run_time.state | int }}:00'
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.us_bath_fan
+
+ds_bath_timer:
+  alias: "Master Bath Fan Timer"
+  sequence:
+    - delay: '00:{{ states.input_number.dsbathfan_run_time.state | int }}:00'
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.ds_bath_fan
+       
+fan_timer:
+  alias: "Fan Timer"
+  sequence:
+    - delay: '{{ states.input_number.fan_run_time.state | int }}:00:00'
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.skylight_fan
+
+hotwater_timer:
+  alias: "Hot Water Timer"
+  sequence:
+    #- delay: '{{ states.input_number.fan_run_time.state | int }}:00:00'
+    - delay: 00:00:03 
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.hotwater
+
+
+check_alarm_on:
+  alias: "Verify Alarm is on"
+  sequence:
+    - delay: 00:00:15 
+    - condition: state  
+      entity_id: alarm_control_panel.home_alarm
+      state: disarmed
+    - service: alarm_control_panel.alarm_arm_home
+      data:
+        entity_id: alarm_control_panel.home_alarm

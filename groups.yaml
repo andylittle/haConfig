@@ -1,0 +1,311 @@
+Weather:
+  entities:
+  - sensor.outside_temp
+  - sensor.downstairs_thermostat_temperature
+UPS:
+  view: false
+  entities:
+  - sensor.ups_name
+    #  - sensor.ups_status
+  - sensor.ups_load
+    #  - sensor.ups_battery
+    #  - sensor.ups_battert_voltage
+  - sensor.ups_time_left
+  - sensor.ups_input_voltage
+  - sensor.ups_transfer_high
+  - sensor.ups_transfer_low
+  - sensor.ups_last_transfer
+  - sensor.ups_transfer_from_battery
+    #  - sensor.ups_time_on_battery
+OutsideLights:
+  name: Outside Lights
+  view: false
+  entities:
+  - switch.garage_outside
+  - light.sengled_e11_g13_03074c6b_1
+  - light.sengled_e11_g13_03076ad2_1
+  - light.sengled_e11_g13_03077131_1
+  - light.sengled_e11_g13_030781cc_1
+HouseLights:
+  name: Lights
+  view: false
+  entities:
+  - light.porch_light
+  - light.cree_connected_a_19_60w_equivalent_fe067982_10  
+  - light.cree_connected_a_19_60w_equivalent_fe04b14c_10
+  - light.upstairs_bedroom
+Garden:
+  view: false
+  entities:
+  - switch.coop_door 
+
+Environmental:
+  view: false
+  entities:
+  - sensor.aq_temperature
+  - sensor.aq_pressure
+  - sensor.aq_quality
+  - sensor.battery_current
+  - sensor.battery_voltage
+  - sensor.battery_power
+  - sensor.nest_box_1  
+  - sensor.nest_box_2  
+  - sensor.nest_box_3  
+  - sensor.nest_box_4  
+  # switch.landscape_lights  
+    #  - group.all_switches
+    #- sensor.hddtemp    
+    #- sensor.speedtest_download
+    #- sensor.speedtest_upload
+    #- sensor.speedtest_ping
+    #- sensor.cpu_speed
+    #- sensor.cpu_temperature
+
+
+Water Temperature:
+  view: false
+  entities:
+          #  - sensor.hot_water_temp_in
+  - sensor.hot_water_temp_out
+  - switch.hotwater  
+          #- sensor.cold_water_temp_in
+          #- sensor.master_shower_temp
+    
+  
+Shop Alarm:
+  name: Shop Alarm
+  view: false
+  entities:
+  - sensor.shop_alarm_keypad
+  - alarm_control_panel.shop_alarm
+  - binary_sensor.shop_door
+  - binary_sensor.shop_overhead
+  - binary_sensor.south_shop
+  - binary_sensor.shop_heat  
+Home Alarm:
+  name: Home Alarm
+  view: false
+  entities:
+  - sensor.home_alarm_keypad
+  - alarm_control_panel.home_alarm
+  - binary_sensor.front_door
+  - binary_sensor.east_door
+  - binary_sensor.first_floor_motion
+  - binary_sensor.north_double_door
+  - binary_sensor.laundry_room
+  - binary_sensor.bathroom
+    #Devices:
+    #view: false
+    #entities:
+    #- group.all_devices        
+          # - device_tracker.0005cd457626
+          #- device_tracker.3dd1e8000000
+          #- device_tracker.androidbc875cbed09d76a5
+          #- device_tracker.androide8e21af346c04975
+          #- device_tracker.envisalink
+          #- device_tracker.mighty15
+          #- device_tracker.pisprinkler
+          #- device_tracker.sarahliesiphone
+          #- device_tracker.vuezonegateway
+
+andy_cell:    
+  view: false
+  name: Andy Cell
+  entities:
+  - device_tracker.androidba826dad6bd07be5
+  - device_tracker.020fb55a3e33 
+
+          
+rheem:
+  view: false
+  name: WaterHeater
+  entities:
+  - water_heater.waterheater
+          #- water_heater.waterheater.temperature
+          #  - water_heater.waterheater.operation_mode
+          #  - water_heater.waterheater.on_vacation
+          #  - water_heater.waterheater.in_use
+          #  - water_heater.waterheater.current_temperature
+          #  - water_heater.waterheater.min_temp
+          #  - water_heater.waterheater.max_temp
+
+
+3dprinter:
+  view: false
+  name: Ender
+  entities:
+  - binary_sensor.ender_3_pro_printing
+  - binary_sensor.ender_3_pro_printing_error    
+  - sensor.ender_3_pro_current_state
+  - sensor.ender_3_pro_job_percentage
+  - camera.octoprint 
+  - switch.Printer_Power  
+water:
+  view: false
+  name: Water
+  entities:
+  - sensor.hot_water_temp_in
+  - sensor.hot_water_temp_out
+  - sensor.cold_water_temp_in
+  - sensor.master_shower_temp
+
+default_view:
+  view: true
+  name: Main 
+  entities:
+         
+  - lock.front_door  
+  - lock.garage_door
+  - lock.shop_door
+  - lock.laundry_door
+  - camera.weather_camera_1
+  - camera.camera_1
+  - camera.camera_2
+  - camera.camera_3
+  - camera.wyze_1  
+  - group.weather
+  - group.HouseLights
+  - group.all_covers
+    #- group.all_switches  
+  - group.alarm_control
+  - group.Water_Temperature 
+  - group.fan
+  - group.bathroomfan  
+    #  - group.mail  
+    #- media_player.living_room 
+ 
+battery_card:
+  name: Battery Status
+  view: false
+  entities:
+  - sensor.lock_front_door_status
+  - sensor.lock_front_door_battery
+  - sensor.lock_garage_door_status
+  - sensor.lock_garage_door_battery
+  - sensor.lock_shop_door_status
+  - sensor.lock_shop_door_battery       
+  - sensor.lock_laundry_door_status
+  - sensor.lock_laundry_door_battery       
+people:
+  name: people
+  view: false
+  entities:
+  - device_tracker.10cdb602a792
+  - device_tracker.d463c63a5dee
+
+Alarms:
+  view: true
+  entities:
+  - group.OutsideLights        
+  - group.shop_alarm
+  - group.home_alarm
+  - group.garden  
+Device Tracker:
+  view: true
+  entities:
+    - group.all_devices        
+    #- group.devices
+Automation:
+  view: true
+  name: Automations
+  entities:
+  - group.all_automations
+    #UPS:
+    #view: true
+    # name: Power
+    #entities:
+    #- group.all_UPS
+    
+indoorclimate:
+  view: true
+  name: Indoor Climate
+  entities:
+  - group.thermostat  
+  - group.water  
+  - group.rheem
+  - group.battery_card
+  - group.UPS  
+thermostat:
+  view: false      
+  name: Nest
+  entities:
+  - binary_sensor.downstairs_thermostat_fan   
+  - binary_sensor.downstairs_thermostat_has_leaf
+  - binary_sensor.downstairs_thermostat_is_locked
+  - binary_sensor.downstairs_thermostat_is_using_emergency_heat 
+  - binary_sensor.downstairs_thermostat_online 
+  - sensor.downstairs_thermostat_humidity 
+  - sensor.downstairs_thermostat_hvac_state   
+  - sensor.downstairs_thermostat_operation_mode   
+  - sensor.downstairs_thermostat_target        
+  - sensor.downstairs_thermostat_temperature
+
+
+bathroomfan:
+  view: false      
+  name: Bathroom Fans
+  entities:
+  - input_number.dsbathfan_run_time
+  - switch.ds_bath_fan 
+  - input_number.usbathfan_run_time
+  - switch.us_bath_fan 
+    
+fan:
+  view: false      
+  name: Fan
+  entities:
+  - switch.skylight
+  - switch.skylight_fan  
+  - input_number.fan_run_time
+
+
+skylight:
+  view: false      
+  name: Skylight
+  entities:
+  - switch.skylight_open       
+  - switch.skylight_close
+    
+Environment:
+  view: true
+  name: Environment
+  entities:
+  - group.Environmental
+  - group.backyard
+    #  - group.all_switches
+  - group.Solar  
+  - group.3dprinter
+  - group.PoolControl
+Alarm Control:
+  entities:
+  - alarm_control_panel.home_alarm
+  - alarm_control_panel.shop_alarm
+
+Mail:
+  view: false      
+  entities:      
+  - camera.usps_mail
+  - sensor.usps_mail  
+
+Solar:
+  view: false      
+  entities:      
+  #- sensor.grid_now
+  #- sensor.grid_today
+  #- history_graph.solar_graph 
+  - sensor.solaredge_current_power_template
+  - sensor.solaredge_last_day_data_template
+  - sensor.solaredge_last_month_data_template  
+  - sensor.solaredge_last_year_data_template  
+PoolControl:
+  view: false      
+  name: pool
+  entities:
+  - switch.Pool_Pump       
+  - switch.Pool_Cleaner
+  - switch.Chlorine_Generator
+  - switch.Pool_Drain
+  - sensor.Pool_Pressure  
+  - sensor.Cleaner_Pressure  
+
+

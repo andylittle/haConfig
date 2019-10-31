@@ -1,0 +1,75 @@
+#
+####customize:
+# Hide some things
+#media_player.roku_18C23E031974:
+#  hidden: true
+
+
+#rename zha lights
+
+light.cree_connected_a_19_60w_equivalent_fe04b14c_10:
+  friendly_name: Living Room Lamp One
+light.cree_connected_a_19_60w_equivalent_fe067982_10:  
+  friendly_name: Master BR Room Lamp
+
+light.sengled_e11_g13_03076ad2_1:  
+  friendly_name: North Outside Light 
+light.sengled_e11_g13_030781cc_1:
+  friendly_name: East Outside Light 
+light.sengled_e11_g13_03074c6b_1:
+  friendly_name: South Outside Light
+light.sengled_e11_g13_03077131_1:
+  friendly_name: Southwest Outside Light
+light.sengled_e11_g13_03102902_1: 
+  friendly_name: Porch Light 
+    #group.all_lights:
+    #friendly_name: Lamps 
+
+  #switch.jasco_products_14291_in_wall_smart_switch_switch_2:
+  #friendly_name: Bathroom Fan 
+
+
+  #media_player.living_room:
+  #friendly_name: LR Audio
+  #switch.relaybutton_1_1:
+  #friendly_name: Night Fan 
+  #switch.skylight_201_1:
+  #friendly_name: Skylight
+   # unhide automation group to place it on a tab in groups.yml
+   #group.all_automations:
+   # hidden: false
+   #group.all_lights:
+   # hidden: false
+   #group.all_switches:
+   #hidden: false
+   #group.all_covers:
+   #hidden: false
+   #group.all_devices:
+   #hidden: false
+
+sensor.solar_voltage:
+  icon: mdi:solar-power
+sensor.solar_current:
+  icon: mdi:solar-power
+sensor.solar_power:
+  icon: mdi:solar-power
+sensor.battery_voltage:
+  icon: mdi:solar-power
+sensor.battery_current:
+  icon: mdi:solar-power
+sensor.battery_power:
+  icon: mdi:solar-power
+sensor.solaredge_current_power_template:
+  icon: mdi:solar-power
+sensor.solaredge_last_day_data_template:  
+  icon: mdi:solar-power
+sensor.solaredge_last_month_data_template:
+  icon: mdi:solar-power
+sensor.solaredge_last_year_data_template:
+  icon: mdi:solar-power
+
+  #switch.us_bath_fan:
+  #icon: mdi:fan
+  #switch.ds_bath_fan:
+  #icon: mdi:fan
+

@@ -1,0 +1,142 @@
+- platform: mqtt
+  name: "Hot Water Temp In"
+  state_topic: "d1mini-1/hwTempIn/Temperature"
+  unit_of_measurement: '°C'
+- platform: mqtt
+  name: "Hot Water Temp Out"
+  state_topic: "d1mini-1/hwTempOut/Temperature"
+  unit_of_measurement: '°C'
+- platform: mqtt
+  name: "Cold Water Temp In"
+  state_topic: "d1mini-1/cwTempIn/Temperature"
+  unit_of_measurement: '°C'
+- platform: mqtt
+  name: "Master Shower Temp"
+  state_topic: "d1mini-1/dsShowerTemp/Temperature"
+  unit_of_measurement: '°C'
+
+- platform: mqtt
+  name: "Pool Pressure"
+  state_topic: "/Pool/atd0/Analog0"
+  unit_of_measurement: '°C'
+- platform: mqtt
+  name: "Cleaner Pressure"
+  state_topic: "/Pool/atd1/Analog1"
+  unit_of_measurement: '°C'
+
+- platform: mqtt
+  name: "Solar Voltage"
+  state_topic: "/test/solar/Voltage"
+  unit_of_measurement: 'Volts'
+- platform: mqtt
+  name: "Solar Current"
+  state_topic: "/test/solar/Current"
+  unit_of_measurement: 'Amps'
+- platform: mqtt
+  name: "Solar Power"
+  state_topic: "/test/solar/Power"
+  unit_of_measurement: 'Watts'
+- platform: mqtt
+  name: "Battery Voltage"
+  state_topic: "/test/battery/Voltage"
+  unit_of_measurement: 'Volts'
+- platform: mqtt
+  name: "Battery Current"
+  state_topic: "/test/battery/Current"
+  unit_of_measurement: 'Amps'
+- platform: mqtt
+  name: "Battery Power"
+  state_topic: "/test/battery/Power"
+  unit_of_measurement: 'Watts'
+
+- platform: mqtt
+  name: "Nest Box 1"
+  state_topic: "/test/temp1/temp1"
+  unit_of_measurement: '°C'
+- platform: mqtt
+  name: "Nest Box 2"
+  state_topic: "/test/temp2/temp2"
+  unit_of_measurement: '°C'
+- platform: mqtt
+  name: "Nest Box 3"
+  state_topic: "/test/temp3/temp3"
+  unit_of_measurement: '°C'
+- platform: mqtt
+  name: "Nest Box 4"
+  state_topic: "/test/temp4/temp4"
+  unit_of_measurement: '°C'
+
+
+- platform: mqtt
+  name: "Outside Temp"
+  #state_topic: "weather/outTemp_C"
+  state_topic: "KCAROSEV36/outTemp_C"
+  unit_of_measurement: '°C'
+
+- platform: mqtt
+  name: "AQ Temperature 1"
+  state_topic: "/d1mini-2/bmp280/Temperature"
+  unit_of_measurement: '°C'
+- platform: mqtt
+  name: "AQ Pressure 1"
+  state_topic: "/d1mini-2/bmp280/Pressure"
+  unit_of_measurement: 'MB'
+- platform: mqtt
+  name: "AQ Quality 1" 
+  state_topic: "/d1mini-2/ads1/airquality"
+  unit_of_measurement: 'MB'
+- platform: mqtt
+  name: "AQ Temperature 2"
+  state_topic: "/d1mini-2/bme280/Temperature"
+  unit_of_measurement: '°C'
+- platform: mqtt
+  name: "AQ Pressure 2"
+  state_topic: "/d1mini-2/bme280/Pressure"
+  unit_of_measurement: 'MB'
+- platform: mqtt
+  name: "AQ Humidity 2"
+  state_topic: "/d1mini-2/bme280/Humidity"
+  unit_of_measurement: '%'
+
+- platform: apcupsd
+  resources:
+    - linev
+    - loadpct
+    - upsname
+    - timeleft
+    - lotrans
+    - hitrans
+    - lastxfer
+      #    - xonbatt
+    - xoffbatt
+      #  moved to solaedge.yaml
+      #- platform: solaredge
+      #  api_key: !secret solaredge_api_key
+      #  site_id: !secret solaredge_site_id
+      #  name: SolarEdge
+      #  monitored_conditions:
+      #    - current_power
+      #    - energy_today
+      #    - energy_this_month
+      #    - energy_this_year
+
+- platform: template
+  sensors:
+    solaredge_current_power_template:
+      friendly_name: "Solar Now"
+      value_template: '{{(states.sensor.solaredge_current_power.state | float / 1000) | round(2)}}'
+      unit_of_measurement: 'kW'
+    solaredge_last_day_data_template:
+      friendly_name: "Solar Today"
+      value_template: '{{(states.sensor.solaredge_energy_today.state | float / 1000) | round(2)}}'
+      unit_of_measurement: 'kWh'
+    solaredge_last_month_data_template:
+      friendly_name: "Solar Month"
+      value_template: '{{(states.sensor.solaredge_energy_this_month.state | float / 1000) | round(2)}}'
+      unit_of_measurement: 'kWh'
+    solaredge_last_year_data_template:
+      friendly_name: "Solar Year"
+      value_template: '{{(states.sensor.solaredge_energy_this_year.state | float / 1000) | round(2)}}'
+      unit_of_measurement: 'kWh'
+
+

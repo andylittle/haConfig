@@ -1,0 +1,50 @@
+###camera:
+  - platform: generic
+    still_image_url: http://192.168.1.200/img/snapshot.cgi?size=3
+    stream_source: http://192.168.1.200/img/video.mjpeg
+    name: Weather Camera 1
+
+  - platform: mjpeg
+    name: OctoPrint
+    still_image_url: http://192.168.1.79/webcam/?action=snapshot
+    mjpeg_url: http://192.168.1.74/webcam/?action=stream
+
+  - platform: generic
+    still_image_url: http://192.168.1.202/img/snapshot.cgi?size=3
+    stream_source: rtsp://192.168.1.202/img/media.sav
+    name: Camera 1 #OC432
+
+    #  - platform: generic
+    #still_image_url: http://192.168.1.199/img/snapshot.cgi?size=3
+    #stream_source: rtsp://192.168.1.199/img/media.sav
+    #name: Camera 2
+
+    #  - platform: ffmpeg
+    #input: rtsp://wyze:wyze@192.168.1.207/live
+    #name: Wyze 1
+
+
+    #  - platform: generic
+    #    still_image_url: http://192.168.1.199/img/snapshot.cgi?size=3
+    #stream_source: rtsp://wyze:wyze@192.168.1.207/live
+    #name: Wyze 1
+
+    #- platform: ffmpeg 
+    #input: rtsp://admin:dg20160404@192.168.1.201/onvif1#works with ffmpeg slow
+    #input: rtsp://admin:dg20160404@192.168.1.201/h264_stream
+    #name: Camera 3
+
+    #  - platform: onvif 
+    #name: Camera 3
+    #username: "admin"
+    #password: "dg20160404"
+    #host: 192.168.1.201
+    #port: 554
+    #stream_source: "rtsp://192.168.1.201/"
+    #still_image_url: "rtsp://192.168.1.201/onvif/snapshot"
+    #mjpeg_url: "rtsp://admin:dg20160404@192.168.1.201/"
+    # still_image_url: rtsp://192.168.1.201:554  
+    #stream_source: "rtsp://192.168.1.201/"
+
+
+
