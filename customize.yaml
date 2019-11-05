@@ -8,9 +8,9 @@
 #rename zha lights
 
 light.cree_connected_a_19_60w_equivalent_fe04b14c_10:
-  friendly_name: Living Room Lamp One
+  friendly_name: Livingroom Lamp 
 light.cree_connected_a_19_60w_equivalent_fe067982_10:  
-  friendly_name: Master BR Room Lamp
+  friendly_name: Bedroom Lamp
 
 light.sengled_e11_g13_03076ad2_1:  
   friendly_name: North Outside Light 
