@@ -3,3 +3,6 @@ google_actions:
     include_entities:
       - switch.skylight_fan    
       - light.porch_light
+      - light.livingroom_lamp
+      - light.bedroom_lamp
+      - light.upstairs_bedroom  
