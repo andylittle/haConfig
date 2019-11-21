@@ -1,6 +1,8 @@
 Weather:
   entities:
   - sensor.outside_temp
+  - sensor.freezer_temp
+  - sensor.fridge_temp
   - sensor.downstairs_thermostat_temperature
 UPS:
   view: false
@@ -31,8 +33,10 @@ HouseLights:
   view: false
   entities:
   - light.porch_light
-  - light.cree_connected_a_19_60w_equivalent_fe067982_10  
-  - light.cree_connected_a_19_60w_equivalent_fe04b14c_10
+  #- light.cree_connected_a_19_60w_equivalent_fe067982_10  
+  - light.livingroom_lamp  
+  #- light.cree_connected_a_19_60w_equivalent_fe04b14c_10
+  - light.bedroom_lamp  
   - light.upstairs_bedroom
 Garden:
   view: false
