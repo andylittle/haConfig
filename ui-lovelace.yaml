@@ -6,17 +6,27 @@ views:
     cards:
       - type: entities
         entities:
-          - sensor.outside_temp
           - sensor.downstairs_thermostat_temperature
+          - sensor.outside_temp
         title: Weather
-        show_header_toggle: true
+        show_header_toggle: false
+      - type: entities
+        entities:
+          - sensor.fridge_temp
+          - sensor.freezer_temp
+        title: Fridge 
+        show_header_toggle: false
       - type: entities
         entities:
           - light.porch_light
           - light.cree_connected_a_19_60w_equivalent_fe067982_10
           - light.cree_connected_a_19_60w_equivalent_fe04b14c_10
           - light.upstairs_bedroom
-          - lock.front_door   
+          - lock.front_door 
+          - lock.garage_door
+          - lock.shop_door
+          - lock.laundry_door
+  
         title: Lights
         show_header_toggle: true
       - type: alarm-panel
@@ -48,8 +58,8 @@ views:
         entity: camera.weather_camera_1
       - type: picture-entity
         entity: camera.camera_1
-      - type: picture-entity
-        entity: camera.camera_2
+        #- type: picture-entity
+        #entity: camera.camera_2
   - path: alarms
     title: Alarms
     badges: []
