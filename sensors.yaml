@@ -69,8 +69,15 @@
 
 - platform: mqtt
   name: "Outside Temp"
-  #state_topic: "weather/outTemp_C"
   state_topic: "KCAROSEV36/outTemp_C"
+  unit_of_measurement: '°C'
+- platform: mqtt
+  name: "Freezer Temp"
+  state_topic: "KCAROSEV36/freezer"
+  unit_of_measurement: '°C'
+- platform: mqtt
+  name: "Fridge Temp"
+  state_topic: "KCAROSEV36/fridge"
   unit_of_measurement: '°C'
 
 - platform: mqtt
