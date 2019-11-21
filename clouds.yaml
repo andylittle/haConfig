@@ -6,3 +6,12 @@ google_actions:
       - light.livingroom_lamp
       - light.bedroom_lamp
       - light.upstairs_bedroom  
+
+        # entity_config:
+        #light.cree_connected_a_19_60w_equivalent_fe067982_10:
+        #name: livingroom lamp
+        #aliases:
+        # - bright lights
+        # - entry lights
+        #room: living room
+
