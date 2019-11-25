@@ -143,16 +143,16 @@ views:
         show_header_toggle: true
       - type: entities
         entities:
-          - sensor.lock_front_door_status
+          - sensor.front_door_lock_status
           - sensor.lock_front_door_battery
-          - sensor.lock_garage_door_status
+          - sensor.garage_door_lock_status
           - sensor.lock_garage_door_battery
-          - sensor.lock_shop_door_status
+          - sensor.shop_door_lock_status
           - sensor.lock_shop_door_battery
-          - sensor.lock_laundry_door_status
+          - sensor.laundry_door_lock_status
           - sensor.lock_laundry_door_battery
-        title: Battery Status
-        show_header_toggle: true
+        title: Lock Status
+        show_header_toggle: false
       - type: entities
         entities:
           - sensor.ups_name
