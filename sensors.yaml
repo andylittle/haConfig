@@ -147,3 +147,92 @@
       unit_of_measurement: 'kWh'
 
 
+- platform: template
+  sensors:
+    shop_door_lock_status: 
+      friendly_name: 'Shop Door Lock Status'
+      value_template: >-
+        {% if is_state("sensor.shop_door_alarm_type","18") or is_state("sensor.shop_door_alarm_type","19") %} 
+          Keypad
+        {% if is_state("sensor.shop_door_alarm_type","19") %} ({{ states.sensor.shop_door_alarm_type_level.state }})
+          {% endif %}
+        {% elif is_state("sensor.shop_door_alarm_type","21") or is_state("sensor.shop_door_alarm_type","22") %} 
+          Manual 
+        {% elif is_state("sensor.shop_door_alarm_type","24") or is_state("sensor.shop_door_alarm_type","25") %} 
+          ZWave
+        {% elif is_state("sensor.shop_door_alarm_type","27") %} 
+          Auto 
+        {% elif is_state("sensor.shop_door_alarm_type","112") %} 
+          Update ({{ states.sensor.shop_door_alarm_type_level.state }})
+        {% endif %}
+
+- platform: template
+  sensors:
+    garage_door_lock_status: 
+      friendly_name: 'Garage Door Lock Status'
+      value_template: >-
+        {% if is_state("sensor.garage_door_alarm_type","18") or is_state("sensor.garage_door_alarm_type","19") %} 
+          Keypad
+        {% if is_state("sensor.garage_door_alarm_type","19") %} ({{ states.sensor.garage_door_alarm_type_level.state }})
+          {% endif %}
+        {% elif is_state("sensor.garage_door_alarm_type","21") or is_state("sensor.garage_door_alarm_type","22") %} 
+          Manual 
+        {% elif is_state("sensor.garage_door_alarm_type","24") or is_state("sensor.garage_door_alarm_type","25") %} 
+          ZWave
+        {% elif is_state("sensor.garage_door_alarm_type","27") %} 
+          Auto 
+        {% elif is_state("sensor.garage_door_alarm_type","112") %} 
+          Update ({{ states.sensor.garage_door_alarm_type_level.state }})
+        {% endif %}
+
+- platform: template
+  sensors:
+    laundry_door_lock_status: 
+      friendly_name: 'Laundry Door Lock Status'
+      value_template: >-
+        {% if is_state("sensor.laundry_door_alarm_type","18") or is_state("sensor.laundry_door_alarm_type","19") %} 
+          Keypad
+        {% if is_state("sensor.laundry_door_alarm_type","19") %} ({{ states.sensor.laundry_door_alarm_type_level.state }})
+          {% endif %}
+        {% elif is_state("sensor.laundry_door_alarm_type","21") or is_state("sensor.laundry_door_alarm_type","22") %} 
+          Manual 
+        {% elif is_state("sensor.laundry_door_alarm_type","24") or is_state("sensor.laundry_door_alarm_type","25") %} 
+          ZWave
+        {% elif is_state("sensor.laundry_door_alarm_type","27") %} 
+          Auto 
+        {% elif is_state("sensor.laundry_door_alarm_type","112") %} 
+          Update ({{ states.sensor.laundry_door_alarm_type_level.state }})
+        {% endif %}
+
+- platform: template
+  sensors:
+    front_door_lock_status: 
+      friendly_name: 'Front Door Lock Status'
+      value_template: >-
+        {% if is_state("sensor.front_door_lock_alarm_type","18") or is_state("sensor.front_door_lock_alarm_type","19") %} 
+          Keypad
+        {% if is_state("sensor.front_door_lock_alarm_type","19") %} ({{ states.sensor.front_door_lock_alarm_level.state }})
+          {% endif %}
+        {% elif is_state("sensor.front_door_lock_alarm_type","21") or is_state("sensor.front_door_lock_alarm_type","22") %} 
+          Manual 
+        {% elif is_state("sensor.front_door_lock_alarm_type","24") or is_state("sensor.front_door_lock_alarm_type","25") %} 
+          ZWave
+        {% elif is_state("sensor.front_door_lock_alarm_type","27") %} 
+          Auto 
+        {% elif is_state("sensor.front_door_lock_alarm_type","112") %} 
+          Update ({{ states.sensor.front_door_lock_alarm_type_level.state }})
+        {% endif %}
+# entity_id: sensor.front_door_lock_alarm
+# ## Alarm Type
+# 18: Keypad Lock
+# 19: Keypad Unlock
+# 21: Manual Lock
+# 22: Manual Unlock
+# 24: ZWave Lock
+# 25: ZWave Unlock
+# 27: Auto Lock
+# 112: Master Code Chaged or User Added
+# ###############
+# ## Alarm Level
+# Set to the User Code that Unlocked the Door (Alarm Type 19)
+# Set to the User Code that was added (Alarm Type 112)
