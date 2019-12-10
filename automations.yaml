@@ -121,8 +121,6 @@
   action:
   - service: scene.turn_on
     entity_id: scene.house_outside_dim
-  - service: switch.turn_on
-    entity_id: switch.garage_outside
 
 - id: house_outside_off
   alias: house_outside_off
@@ -133,8 +131,6 @@
   action:
   - service: scene.turn_on
     entity_id: scene.house_outside_off
-  - service: switch.turn_off
-    entity_id: switch.garage_outside
 
 - id: fan_us_timer
   alias: fan_us_timer
