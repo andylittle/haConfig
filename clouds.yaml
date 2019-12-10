@@ -6,7 +6,8 @@ google_actions:
       - light.livingroom_lamp
       - light.bedroom_lamp
       - light.upstairs_bedroom  
-
+      - light.yardlight
+      - light.shop_outside_east
         # entity_config:
         #light.cree_connected_a_19_60w_equivalent_fe067982_10:
         #name: livingroom lamp
