@@ -36,6 +36,7 @@ envisalink: !include envisalinks.yaml
 group: !include groups.yaml
 history_graph: !include history_graphs.yml
 input_number: !include input_number.yaml
+light: !include lights.yaml
 mqtt: !include mqtts.yaml
 nest: !include nest.yaml
 notify: !include notify.yaml
