@@ -13,6 +13,7 @@ views:
       - type: entities
         entities:
           - sensor.fridge_temp
+          - history_graph.freezer_temp  
           - sensor.freezer_temp
         title: Fridge 
         show_header_toggle: false
@@ -25,6 +26,7 @@ views:
           - light.rgb_light_1  
           - light.rgb_light_2  
           - light.upstairs_bedroom
+          - light.office_light
           - lock.front_door 
           - lock.garage_door
           - lock.shop_door
@@ -70,12 +72,12 @@ views:
       - type: entities
         entities:
           - switch.garage_outside
-          - light.yardlight
           - light.shop_outside_east   
           - light.sengled_e11_g13_03074c6b_1
           - light.sengled_e11_g13_03076ad2_1
           - light.sengled_e11_g13_03077131_1
           - light.sengled_e11_g13_030781cc_1
+          - light.landscape_lights 
         title: Outside Lights
         show_header_toggle: true
       - type: entities
