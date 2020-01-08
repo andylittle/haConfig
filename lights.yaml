@@ -16,6 +16,25 @@
   qos: 1
   retain: false
 
+- platform: mqtt
+  name: "Office Light"
+  command_topic: "cmnd/dimmer5/POWER"
+  state_topic: "tele/dimmer5/STATE"
+  state_value_template: "{{value_json.POWER}}"
+  availability_topic: "tele/dimmer5/LWT"
+  brightness_command_topic: "cmnd/dimmer5/Dimmer"
+  brightness_state_topic: "tele/dimmer5/STATE"
+  brightness_scale: 100
+  on_command_type: "brightness"
+  brightness_value_template: "{{value_json.Dimmer}}"
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 1
+  retain: false
+
+  
   
 - platform: mqtt
   name: "Yardlight"
@@ -96,6 +115,20 @@
     - 4
   payload_on: "ON"
   payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 1
+  retain: false
+
+
+- platform: mqtt
+  name: "Landscape Lights"
+  state_topic: "stat/landscapeLights/RESULT"
+  value_template: "{{ value_json.POWER }}"
+  command_topic: "cmnd/landscapeLights/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/landscapeLights/LWT"
   payload_available: "Online"
   payload_not_available: "Offline"
   qos: 1
