@@ -231,7 +231,7 @@
     entity_id: sensor.master_shower_temp
     above: '92'
   action:
-  - delay: '00:06:00'
+  - delay: '00:01:00'
   - service: switch.turn_on
     entity_id: switch.ds_bath_fan
 
