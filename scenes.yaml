@@ -2,20 +2,22 @@
   entities:
     light.sengled_e11_g13_03074c6b_1:
       state: on
-      brightness: 1
+      brightness: 10
     light.sengled_e11_g13_030781cc_1:
       state: on
-      brightness: 1
+      brightness: 10
     light.sengled_e11_g13_03077131_1:
       state: on
-      brightness: 1
+      brightness: 10
     light.sengled_e11_g13_03076ad2_1:
       state: on
-      brightness: 1
+      brightness: 10
     light.shop_outside_east:  
       state: on
-      brightness: 2
+      brightness: 20
     switch.garage_outside: 
+      state: on
+    light.landscape_lights:  
       state: on
 - name: House Outside Bright 
   entities:
@@ -36,6 +38,8 @@
       brightness: 255
     switch.garage_outside: 
       state: on
+    light.landscape_lights:  
+      state: on
 
 - name: House Outside Off 
   entities:
@@ -50,6 +54,8 @@
     light.shop_outside_east:  
       state: off 
     switch.garage_outside: 
+      state: off
+    light.landscape_lights:  
       state: off
 
 - name: lr_bright
