@@ -1,18 +1,18 @@
 - platform: mqtt
   name: "Hot Water Temp In"
-  state_topic: "d1mini-1/hwTempIn/Temperature"
+  state_topic: "/hotwater/hwTempIn/Temperature"
   unit_of_measurement: '°C'
 - platform: mqtt
   name: "Hot Water Temp Out"
-  state_topic: "d1mini-1/hwTempOut/Temperature"
+  state_topic: "/hotwater/hwTempOut/Temperature"
   unit_of_measurement: '°C'
 - platform: mqtt
   name: "Cold Water Temp In"
-  state_topic: "d1mini-1/cwTempIn/Temperature"
+  state_topic: "/hotwater/cwTempIn/Temperature"
   unit_of_measurement: '°C'
 - platform: mqtt
   name: "Master Shower Temp"
-  state_topic: "d1mini-1/dsShowerTemp/Temperature"
+  state_topic: "/hotwater/dsShowerTemp/Temperature"
   unit_of_measurement: '°C'
 
 - platform: mqtt
