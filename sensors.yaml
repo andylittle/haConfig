@@ -69,15 +69,19 @@
 
 - platform: mqtt
   name: "Outside Temp"
-  state_topic: "KCAROSEV36/outTemp_C"
+  state_topic: "rtl_433/orangepi0-1/devices/HIDEKI_TS04_sensor/1/temperature_C"
   unit_of_measurement: '°C'
 - platform: mqtt
-  name: "Freezer Temp"
+  name: "Deep Freeze Temp"
   state_topic: "KCAROSEV36/freezer"
   unit_of_measurement: '°C'
 - platform: mqtt
+  name: "Freezer Temp"
+  state_topic: "rtl_433/orangepi0-1/devices/Acurite_986_Sensor/1R/9476/temperature_F"
+  unit_of_measurement: '°F'
+- platform: mqtt
   name: "Fridge Temp"
-  state_topic: "KCAROSEV36/fridge"
+  state_topic: "rtl_433/orangepi0-1/devices/Acurite_tower_sensor/B/9748/temperature_C"
   unit_of_measurement: '°C'
 
 - platform: mqtt
