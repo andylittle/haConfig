@@ -26,7 +26,7 @@ views:
           - light.rgb_light_1  
           - light.rgb_light_2  
           - light.upstairs_bedroom
-          - light.office_light
+          - light.office_dimmer
           - lock.front_door 
           - lock.garage_door
           - lock.shop_door
@@ -83,9 +83,11 @@ views:
       - type: entities
         entities:
           - sensor.shop_alarm_keypad
-          - binary_sensor.shop_door
+          - binary_sensor.shop_door_east
           - binary_sensor.shop_overhead
-          - binary_sensor.south_shop
+          - binary_sensor.shop_door_south
+          - binary_sensor.shop_windows
+          - binary_sensor.shop_smoke
           - binary_sensor.shop_heat
         title: Shop Alarm
         show_header_toggle: true
