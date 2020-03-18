@@ -12,32 +12,38 @@ zonedump_interval: 30
 panic_type: Police
 zones:
   9:
-    name: 'Shop Door'
-    type: 'opening'
+    name: 'Shop Door East'
+    type: 'door'
   10:
     name: 'Shop Overhead'
-    type: 'opening'
+    type: 'garage_door'
   11:
-    name: 'South Shop'
-    type: 'opening'
+    name: 'Shop Door South'
+    type: 'door'
+  14:
+    name: 'Shop Windows'
+    type: 'window'
+  15:
+    name: 'Shop Smoke'
+    type: 'smoke'
   16:
     name: 'Shop Heat'
     type: 'heat'
   12:
     name: 'Laundry Room'
-    type: 'opening'
+    type: 'door'
   13:
     name: 'Bathroom'
-    type: 'opening'
+    type: 'door'
   21:
     name: 'Front Door'
-    type: 'opening'
+    type: 'door'
   22:
     name: 'East Door'
-    type: 'opening'
+    type: 'door'
   23:
     name: 'North Double Door'
-    type: 'opening'
+    type: 'door'
   24:
     name: 'First Floor Motion'
     type: 'motion'
