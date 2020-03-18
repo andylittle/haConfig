@@ -254,3 +254,28 @@
       #title: 'Bathroom Fan Off text'
       message: 'time to close house'
 
+
+- alias: Power Button
+  #initial_state: 'on'
+  trigger:
+  - event_data:
+      #unique_id: "00:15:8d:00:02:f8:16:4e:1:0x0006"
+      device_ieee: "00:15:8d:00:02:f8:16:4e"
+      command: click
+    platform: event
+    event_type: zha_event
+  action:
+  - service: switch.turn_off
+    entity_id: switch.ds_bath_fan
+  - delay:
+      seconds: 20 
+  - service: switch.turn_on
+    entity_id: switch.ds_bath_fan
+  - delay:
+      seconds: 15
+  - service: switch.turn_off
+    entity_id: switch.ds_bath_fan
+  - delay:
+      seconds: 15
+  - service: switch.turn_on
+    entity_id: switch.ds_bath_fan
