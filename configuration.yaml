@@ -19,6 +19,7 @@ tts:
 
 logger:
   default: warning
+ # default: debug
 
 zha:
   usb_path: /dev/zigbee
@@ -30,10 +31,10 @@ zwave:
 
 automation: !include automations.yaml
 camera: !include cameras.yaml
-cloud: !include clouds.yaml
+#cloud: !include clouds.yaml
 #device_tracker: !include devicetrackers.yaml
 envisalink: !include envisalinks.yaml
-group: !include groups.yaml
+#group: !include groups.yaml
 history_graph: !include history_graphs.yml
 input_number: !include input_number.yaml
 light: !include lights.yaml
