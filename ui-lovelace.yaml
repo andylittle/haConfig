@@ -13,10 +13,48 @@ views:
       - type: entities
         entities:
           - sensor.fridge_temp
-          - history_graph.freezer_temp  
+          - sensor.fridge_humid
           - sensor.freezer_temp
-        title: Fridge 
+          - sensor.deep_freeze
+        title: Fridge and Freezers 
         show_header_toggle: false
+
+      - type: history-graph
+        entities:
+          - sensor.filtered_fridge_temp
+          - sensor.freezer_temp
+          - sensor.deep_freeze
+        title: Fridge History 
+
+      - type: history-graph
+        entities:
+          - sensor.14789t 
+          - sensor.14789h 
+          - sensor.12391t 
+          - sensor.12391h 
+          - sensor.6312t 
+          - sensor.6312h 
+          - sensor.6692t 
+          - sensor.6692h 
+        title: Temperatures 
+      - type: history-graph
+        entities:
+          - sensor.downstairs_thermostat_temperature
+          - sensor.outside_temp
+        title: Temperatures 
+
+
+      - type: entities
+        entities:
+          - sensor.14789t 
+          - sensor.14789h 
+          - sensor.12391t 
+          - sensor.12391h 
+          - sensor.6312t 
+          - sensor.6312h 
+          - sensor.6692t 
+          - sensor.6692h 
+        title: Temperatures 
       - type: entities
         entities:
           - light.yardlight
@@ -109,6 +147,20 @@ views:
       - type: entities
         entities:
           - switch.coop_door
+          - switch.relay_1
+          - switch.relay_2
+          - switch.relay_3
+          - switch.relay_4
+          - switch.relay_5
+          - switch.relay_6
+          - switch.relay_7
+          - switch.relay_8
+          - switch.shop_center  
+          - switch.shop_north  
+          - switch.shop_south
+          - sensor.centralite_3210_l_cc10a60c_electrical_measurement
+          - switch.centralite_3210_l_cc10a60c_on_off
+          - sensor.centralite_3210_l_cc10a60c_smartenergy_metering  
         title: Garden
         show_header_toggle: true
   - path: device_tracker
@@ -183,13 +235,11 @@ views:
           - sensor.aq_temperature_1
           - sensor.aq_pressure_1
           - sensor.aq_quality_1
-          - history_graph.air_quality
           - sensor.aq_temperature_2
           - sensor.aq_pressure_2
           - sensor.aq_humidity_2
           - sensor.battery_current
           - sensor.battery_voltage
-          - history_graph.battery_voltage
           - sensor.battery_power
           - sensor.nest_box_1
           - sensor.nest_box_2
