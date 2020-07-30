@@ -32,8 +32,9 @@
   optimistic: false
   qos: 0
   retain: true
-  # skylight spare
+
   #- platform: mqtt
+  # skylight spare
   # name: "Skylight Open"
   #state_topic: "Fan1/gpio/14"
   #command_topic: "Fan1/gpio/14"
@@ -42,6 +43,7 @@
   # optimistic: false
   # qos: 0
   #retain: true
+ 
 - platform: mqtt
   name: "Skylight Fan"
   state_topic: "/Fan1/gpio/13"
@@ -127,12 +129,176 @@
   qos: 0
   retain: true
 
+  #- platform: mqtt
+  #name: "Printer Power"
+  #state_topic: "/sonoff-1/gpio/12"
+  #command_topic: "/sonoff-1/gpio/12"
+  #payload_on: "1"
+  #payload_off: "0"
+  #optimistic: false
+  #qos: 0
+  #retain: true
 - platform: mqtt
   name: "Printer Power"
-  state_topic: "/sonoff-1/gpio/12"
-  command_topic: "/sonoff-1/gpio/12"
-  payload_on: "1"
-  payload_off: "0"
-  optimistic: false
+  state_topic: "stat/ender3/RESULT"  
+  value_template: "{{ value_json.POWER }}"
+  command_topic: "cmnd/ender3/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/ender3/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 1
+  retain: false
+
+
+- platform: mqtt
+  name: 'Relay 5'
+  icon: 'mdi:door'
+  state_topic: '/testone_22/gpio5/State'
+  command_topic: '/testone_22/gpio/5'
+  availability_topic: '/testone_22/status/LWT'
+  payload_on: '0'
+  payload_off: '1'
+  payload_available: 'Connected'
+  payload_not_available: 'Connection Lost' 
   qos: 0
-  retain: true
+  retain: false
+ 
+
+- platform: mqtt
+  name: 'Relay 6'
+  icon: 'mdi:door'
+  state_topic: '/testone_22/gpio4/State'
+  command_topic: '/testone_22/gpio/4'
+  availability_topic: '/testone_22/status/LWT'
+  payload_on: '0'
+  payload_off: '1'
+  payload_available: 'Connected'
+  payload_not_available: 'Connection Lost' 
+  qos: 0
+  retain: false
+ 
+
+- platform: mqtt
+  name: 'Relay 7'
+  icon: 'mdi:door'
+  state_topic: '/testone_22/gpio0/State'
+  command_topic: '/testone_22/gpio/0'
+  availability_topic: '/testone_22/status/LWT'
+  payload_on: '0'
+  payload_off: '1'
+  payload_available: 'Connected'
+  payload_not_available: 'Connection Lost' 
+  qos: 0
+  retain: false
+ 
+
+- platform: mqtt
+  name: 'Relay 4'
+  icon: 'mdi:door'
+  state_topic: '/testone_22/gpio16/State'
+  command_topic: '/testone_22/gpio/16'
+  availability_topic: '/testone_22/status/LWT'
+  payload_on: '0'
+  payload_off: '1'
+  payload_available: 'Connected'
+  payload_not_available: 'Connection Lost' 
+  qos: 0
+  retain: false
+ 
+
+- platform: mqtt
+  name: 'Relay 3'
+  icon: 'mdi:door'
+  state_topic: '/testone_22/gpio14/State'
+  command_topic: '/testone_22/gpio/14'
+  availability_topic: '/testone_22/status/LWT'
+  payload_on: '0'
+  payload_off: '1'
+  payload_available: 'Connected'
+  payload_not_available: 'Connection Lost' 
+  qos: 0
+  retain: false
+ 
+
+- platform: mqtt
+  name: 'Relay 2'
+  icon: 'mdi:door'
+  state_topic: '/testone_22/gpio12/State'
+  command_topic: '/testone_22/gpio/12'
+  availability_topic: '/testone_22/status/LWT'
+  payload_on: '0'
+  payload_off: '1'
+  payload_available: 'Connected'
+  payload_not_available: 'Connection Lost' 
+  qos: 0
+  retain: false
+ 
+
+- platform: mqtt
+  name: 'Relay 1'
+  icon: 'mdi:door'
+  state_topic: '/testone_22/gpio13/State'
+  command_topic: '/testone_22/gpio/13'
+  availability_topic: '/testone_22/status/LWT'
+  payload_on: '0'
+  payload_off: '1'
+  payload_available: 'Connected'
+  payload_not_available: 'Connection Lost' 
+  qos: 0
+  retain: false
+
+- platform: mqtt
+  name: 'Relay 8'
+  icon: 'mdi:door'
+  state_topic: '/testone_22/gpio2/State'
+  command_topic: '/testone_22/gpio/2'
+  availability_topic: '/testone_22/status/LWT'
+  payload_on: '0'
+  payload_off: '1'
+  payload_available: 'Connected'
+  payload_not_available: 'Connection Lost' 
+
+  # mosquitto_sub -u user -P pass -v -t /testone_22/#
+  #/testone_22/gpio/12 0
+  #/testone_22/gpio12/State 1
+  #/testone_22/gpio/12 1
+  #/testone_22/gpio12/State 0
+
+- platform: mqtt
+  name: "Shop Center"
+  state_topic: "stat/shopFluorCenter/RESULT"  
+  value_template: "{{ value_json.POWER }}"
+  command_topic: "cmnd/shopFluorCenter/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/shopFluorCenter/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 1
+  retain: false
+- platform: mqtt
+  name: "Shop North"
+  state_topic: "stat/shopFluorNorth/RESULT"  
+  value_template: "{{ value_json.POWER }}"
+  command_topic: "cmnd/shopFluorNorth/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/shopFluorNorth/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 1
+  retain: false
+- platform: mqtt
+  name: "Shop South"
+  state_topic: "stat/shopFluorSouth/RESULT"  
+  value_template: "{{ value_json.POWER }}"
+  command_topic: "cmnd/shopFluorSouth/POWER"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/shopFluorSouth/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 1
+  retain: false
