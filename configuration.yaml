@@ -2,6 +2,8 @@
 default_config:
 homeassistant:
   customize: !include customize.yaml
+  unit_system: imperial
+
 
 lovelace:
   mode: yaml
@@ -20,9 +22,11 @@ tts:
 logger:
   default: warning
  # default: debug
+ #logs:
+ #  homeassistant.components.mqtt: debug
 
 zha:
-  usb_path: /dev/zigbee
+  ## not needed ## usb_path: /dev/zigbee
   database_path: /home/homeassistant/.homeassistant/zigbee.db
 
 zwave:
@@ -35,7 +39,7 @@ camera: !include cameras.yaml
 #device_tracker: !include devicetrackers.yaml
 envisalink: !include envisalinks.yaml
 #group: !include groups.yaml
-history_graph: !include history_graphs.yml
+#history_graph: !include history_graphs.yml
 input_number: !include input_number.yaml
 light: !include lights.yaml
 mqtt: !include mqtts.yaml
