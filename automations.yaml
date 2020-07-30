@@ -11,6 +11,17 @@
   - service: alarm_control_panel.alarm_disarm
     entity_id: alarm_control_panel.shop_alarm
 
+- id: alarm_off_shop_keypad
+  alias: alarm_off_shop_keypad
+  trigger:
+    platform: state
+    entity_id: sensor.shop_door_alarm_type
+    to: "19"
+  action:
+    service: alarm_control_panel.alarm_disarm
+    entity_id: alarm_control_panel.shop_alarm
+
+
 - id: alarm_off_home_am
   alias: alarm_off_home_am
   trigger:
@@ -44,7 +55,7 @@
   trigger:
   - platform: sun
     event: sunrise
-    offset: "+0:40:00"
+    offset: "+0:20:00"
   action:
   - service: switch.turn_on
     entity_id: switch.coop_door
@@ -80,7 +91,7 @@
   trigger:
   - platform: sun
     event: sunrise
-    offset: "+00:30:00"
+    offset: "+00:15:00"
   action:
     service: scene.turn_on
     entity_id: scene.lr_br_off
@@ -127,7 +138,7 @@
   trigger:
   - platform: sun
     event: sunrise
-    offset: "+00:30:00"
+    offset: "+00:15:00"
   action:
   - service: scene.turn_on
     entity_id: scene.house_outside_off
@@ -254,28 +265,52 @@
       #title: 'Bathroom Fan Off text'
       message: 'time to close house'
 
-
-- alias: Power Button
+- id: fan_on
+  alias: Click Fan On 
   #initial_state: 'on'
   trigger:
-  - event_data:
-      #unique_id: "00:15:8d:00:02:f8:16:4e:1:0x0006"
-      device_ieee: "00:15:8d:00:02:f8:16:4e"
-      command: click
     platform: event
     event_type: zha_event
+    event_data:
+      device_ieee: "00:15:8d:00:02:f8:16:4e"
+      #command: click
+      click_type: single
   action:
   - service: switch.turn_off
     entity_id: switch.ds_bath_fan
   - delay:
-      seconds: 20 
+      seconds: 10 
   - service: switch.turn_on
     entity_id: switch.ds_bath_fan
   - delay:
-      seconds: 15
+      seconds: 3 
   - service: switch.turn_off
     entity_id: switch.ds_bath_fan
   - delay:
-      seconds: 15
+      seconds: 3
   - service: switch.turn_on
     entity_id: switch.ds_bath_fan
+
+
+    #- id: fan_on_test
+    #  alias: Double Click Hot Water
+    #  #initial_state: 'on'
+    #  trigger:
+    #    platform: event
+    #    event_type: zha_event
+    #    event_data:
+    #      device_ieee: "00:15:8d:00:02:f8:16:4e"
+    #  action:
+    #  - service: switch.turn_on
+    #    data_template:
+    # entity_id: >
+    #   {% if args.event.data.click_type == 'single' %}
+    #          switch.ds_bath_fan
+    #   {% elif trigger.event.data.click_type == 'double' %}
+    #     switch.hotwater
+    #   {% endif %} 
+    
+    #- service: switch.turn_on
+    #entity_id: switch.hotwater
+
+
