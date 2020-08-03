@@ -37,12 +37,40 @@ views:
           - sensor.6692t 
           - sensor.6692h 
         title: Temperatures 
+
+
       - type: history-graph
         entities:
-          - sensor.downstairs_thermostat_temperature
-          - sensor.outside_temp
-        title: Temperatures 
+          - sensor.total_steps
+          - sensor.daily_step_goal
+        title: Garmin Steps
 
+      - type: history-graph
+        entities:
+          - sensor.floors_ascended_goal
+          - sensor.floors_ascended
+          - sensor.floors_descended  
+        title: Garmin Steps
+        
+      - type: history-graph
+        entities:
+          - sensor.max_stress_level
+          - sensor.medium_stress_duration
+          - sensor.rest_stress_duration
+          - sensor.activity_stress_duration
+          - sensor.avg_stress_level
+          - sensor.high_stress_duration
+          - sensor.low_stress_duration
+          - sensor.total_stress_duration
+          - sensor.uncat_stress_duration
+        title: Garmin Stress
+
+      - type: history-graph
+        entities:
+          - sensor.resting_heart_rate
+          - sensor.max_heart_rate
+          - sensor.min_heart_rate  
+        title: Garmin Heart
 
       - type: entities
         entities:
