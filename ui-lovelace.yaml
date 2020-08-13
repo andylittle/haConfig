@@ -28,8 +28,8 @@ views:
 
       - type: history-graph
         entities:
-          - sensor.14789t 
-          - sensor.14789h 
+          - sensor.f14789t 
+          - sensor.f14789h 
           - sensor.12391t 
           - sensor.12391h 
           - sensor.6312t 
@@ -74,8 +74,8 @@ views:
 
       - type: entities
         entities:
-          - sensor.14789t 
-          - sensor.14789h 
+          - sensor.f14789t 
+          - sensor.f14789h
           - sensor.12391t 
           - sensor.12391h 
           - sensor.6312t 
