@@ -10,18 +10,32 @@
   action:
   - service: alarm_control_panel.alarm_disarm
     entity_id: alarm_control_panel.shop_alarm
-
 - id: alarm_off_shop_keypad
   alias: alarm_off_shop_keypad
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.shop_alarm
+    state: armed_home
   trigger:
     platform: state
-    entity_id: sensor.shop_door_alarm_type
-    to: "19"
+    entity_id: sensor.garage_door_alarm_type
+    to: '19'
   action:
     service: alarm_control_panel.alarm_disarm
     entity_id: alarm_control_panel.shop_alarm
-
-
+- id: alarm_off_home_keypad
+  alias: alarm_off_home_keypad
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.home_alarm
+    state: armed_away
+  trigger:
+    platform: state
+    entity_id: sensor.front_door_alarm_type
+    to: '19'
+  action:
+    service: alarm_control_panel.alarm_disarm
+    entity_id: alarm_control_panel.home_alarm
 - id: alarm_off_home_am
   alias: alarm_off_home_am
   trigger:
@@ -34,7 +48,6 @@
   action:
   - service: alarm_control_panel.alarm_disarm
     entity_id: alarm_control_panel.home_alarm
-
 - id: alarm_on_both_pm
   alias: alarm_on_both_pm
   trigger:
@@ -49,70 +62,59 @@
     entity_id: alarm_control_panel.home_alarm
   - service: alarm_control_panel.alarm_arm_home
     entity_id: alarm_control_panel.shop_alarm
-
 - id: coop_door_open
   alias: coop_door_open
   trigger:
   - platform: sun
     event: sunrise
-    offset: "+0:20:00"
+    offset: +0:20:00
   action:
   - service: switch.turn_on
     entity_id: switch.coop_door
   - service: notify.andy_text
     data:
-      message: 'Chickens automatically released'
+      message: Chickens automatically released
   - service: notify.sarah_text
     data:
-      message: 'Chickens automatically released'
-
+      message: Chickens automatically released
 - id: coop_door_close
   alias: coop_door_close
   trigger:
   - platform: sun
     event: sunset
-    offset: "+00:15:00"
+    offset: +00:15:00
   action:
   - service: switch.turn_off
     entity_id: switch.coop_door
-
-
 - id: lamp_on_lr_am
   alias: lamp_on_lr_am
   trigger:
   - platform: time
-    at: '04:00:45'
+    at: 04:00:45
   action:
   - service: scene.turn_on
     entity_id: scene.lr_dim
-
 - id: lamps_off_both_am
   alias: lamps_off_both_am
   trigger:
   - platform: sun
     event: sunrise
-    offset: "+00:15:00"
+    offset: +00:15:00
   action:
     service: scene.turn_on
     entity_id: scene.lr_br_off
-
-    
 - id: lamp_on_lr_pm
   alias: lamp_on_lr_pm
   trigger:
   - platform: sun
     event: sunset
-    offset: "-00:30:00"
+    offset: -00:30:00
   condition:
   - condition: time
     before: '17:15'
-  
   action:
   - service: scene.turn_on
     entity_id: scene.lr_dim
-
-
-
 - id: lamp_off_lr_pm
   alias: lamp_off_lr_pm_19:30
   trigger:
@@ -121,28 +123,24 @@
   action:
     service: scene.turn_on
     entity_id: scene.lr_off
-
-
 - id: pm_house_outside_on_dim
   alias: pm_house_outside_on_dim
   trigger:
   - platform: sun
     event: sunset
-    offset: "+00:15:00"
+    offset: +00:15:00
   action:
   - service: scene.turn_on
     entity_id: scene.house_outside_dim
-
 - id: house_outside_off
   alias: house_outside_off
   trigger:
   - platform: sun
     event: sunrise
-    offset: "+00:15:00"
+    offset: +00:15:00
   action:
   - service: scene.turn_on
     entity_id: scene.house_outside_off
-
 - id: fan_us_timer
   alias: fan_us_timer
   trigger:
@@ -152,7 +150,6 @@
   action:
   - service: script.turn_on
     entity_id: script.us_bath_timer
-
 - id: fan_us_timer_reset
   alias: fan_us_timer_reset
   trigger:
@@ -162,7 +159,6 @@
   action:
   - service: script.turn_off
     entity_id: script.us_bath_timer
-
 - id: fan_ds_timer
   alias: fan_ds_timer
   trigger:
@@ -172,9 +168,8 @@
   action:
   - service: script.turn_on
     entity_id: script.ds_bath_timer
-
 - id: fan_ds_timer_reset
-  alias: "fan_ds_timer_reset"
+  alias: fan_ds_timer_reset
   trigger:
   - platform: state
     entity_id: switch.ds_bath_fan
@@ -182,7 +177,6 @@
   action:
   - service: script.turn_off
     entity_id: script.ds_bath_timer
-
 - id: fan_skylight_timer
   alias: fan_skylight_timer
   trigger:
@@ -192,7 +186,6 @@
   action:
   - service: script.turn_on
     entity_id: script.fan_timer
-
 - id: fan_skylight_timer_reset
   alias: fan_skylight_timer
   trigger:
@@ -202,8 +195,7 @@
   action:
   - service: script.turn_off
     entity_id: script.fan_timer
-
-- id: fan_skylight_close    
+- id: fan_skylight_close
   alias: fan_skylight_close
   trigger:
   - platform: state
@@ -213,9 +205,8 @@
   action:
   - service: switch.turn_off
     entity_id: switch.skylight
-
-- id: fan_skylight_open    
-  alias: fan_skylight_open 
+- id: fan_skylight_open
+  alias: fan_skylight_open
   trigger:
   - platform: state
     entity_id: switch.skylight_fan
@@ -224,7 +215,6 @@
   action:
   - service: switch.turn_on
     entity_id: switch.skylight
-
 - id: hotwater_timer
   alias: hotwater_timer
   trigger:
@@ -234,7 +224,6 @@
   action:
   - service: script.turn_on
     entity_id: script.hotwater_timer
-
 - id: hotwater_fan_ds_turnon
   alias: hotwater_fan_ds_turnon
   trigger:
@@ -242,10 +231,9 @@
     entity_id: sensor.master_shower_temp
     above: '92'
   action:
-  - delay: '00:01:00'
+  - delay: 00:01:00
   - service: switch.turn_on
     entity_id: switch.ds_bath_fan
-
 - id: notification_close_house
   alias: notification_close_house
   trigger:
@@ -254,63 +242,52 @@
     above: '71'
   condition:
   - condition: time
-    after: '06:00'
-    #before: '17:15'
+    after: 06:00
   - condition: state
-    entity_id: switch.skylight 
+    entity_id: switch.skylight
     state: 'on'
   action:
   - service: notify.andy_text
     data:
-      #title: 'Bathroom Fan Off text'
-      message: 'time to close house'
-
-- id: fan_on
-  alias: Click Fan On 
-  #initial_state: 'on'
+      message: time to close house
+- id: '1605879957285'
+  alias: New Automation
+  description: ''
   trigger:
-    platform: event
-    event_type: zha_event
-    event_data:
-      device_ieee: "00:15:8d:00:02:f8:16:4e"
-      #command: click
-      click_type: single
+  - device_id: 52c46a45f56d4f8f96bf41dd588d39d0
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: remote_button_short_press
+  condition: []
   action:
   - service: switch.turn_off
     entity_id: switch.ds_bath_fan
   - delay:
-      seconds: 10 
+      seconds: 10
   - service: switch.turn_on
     entity_id: switch.ds_bath_fan
   - delay:
-      seconds: 3 
+      seconds: 3
   - service: switch.turn_off
     entity_id: switch.ds_bath_fan
   - delay:
       seconds: 3
   - service: switch.turn_on
     entity_id: switch.ds_bath_fan
-
-
-    #- id: fan_on_test
-    #  alias: Double Click Hot Water
-    #  #initial_state: 'on'
-    #  trigger:
-    #    platform: event
-    #    event_type: zha_event
-    #    event_data:
-    #      device_ieee: "00:15:8d:00:02:f8:16:4e"
-    #  action:
-    #  - service: switch.turn_on
-    #    data_template:
-    # entity_id: >
-    #   {% if args.event.data.click_type == 'single' %}
-    #          switch.ds_bath_fan
-    #   {% elif trigger.event.data.click_type == 'double' %}
-    #     switch.hotwater
-    #   {% endif %} 
-    
-    #- service: switch.turn_on
-    #entity_id: switch.hotwater
-
-
+  mode: single
+- id: '1605893547483'
+  alias: DS Bath HotWater
+  description: ''
+  trigger:
+  - device_id: 52c46a45f56d4f8f96bf41dd588d39d0
+    domain: zha
+    platform: device
+    type: remote_button_double_press
+    subtype: remote_button_double_press
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.hotwater
+  mode: single

@@ -9,7 +9,7 @@ lovelace:
   mode: yaml
 
 apcupsd:
-  host: 192.168.1.133
+  host: 192.168.1.131
   port: 3552
 
 recorder:
@@ -21,7 +21,7 @@ tts:
 
 logger:
   default: warning
- # default: debug
+  #default: debug
  #logs:
  #  homeassistant.components.mqtt: debug
 
@@ -32,6 +32,19 @@ zha:
 zwave:
   usb_path: /dev/zwave
   network_key: !secret zwave_key 
+
+luftdaten:
+  sensor_id: 49784
+  show_on_map: true
+  scan_interval: 60
+  sensors:
+    monitored_conditions:
+      - temperature
+      - humidity
+      - pressure
+      - P1
+      - P2  
+
 
 automation: !include automations.yaml
 camera: !include cameras.yaml

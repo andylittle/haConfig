@@ -3,8 +3,8 @@
 
 - platform: mqtt
   name: "Hotwater"
-  state_topic: "/hotwater/gpio/5"
-  command_topic: "/hotwater/gpio/5"
+  state_topic: "hotwater_10/gpio/5"
+  command_topic: "hotwater_10/gpio/5"
   payload_on: "1"
   payload_off: "0"
   optimistic: false
@@ -22,6 +22,17 @@
   optimistic: false
   qos: 0
   retain: true
+
+- platform: mqtt
+  name: "Coop Door New"
+  state_topic: "coop_55/door/state"
+  command_topic: "coop_55/gpio/12"
+  payload_on: "0"
+  payload_off: "1"
+  optimistic: false
+  qos: 1
+  retain: true
+
 
 - platform: mqtt
   name: "Skylight"
@@ -79,10 +90,12 @@
 
 - platform: mqtt
   name: "Pool Drain"
-  state_topic: "/Pool/gpio/13"
-  command_topic: "/Pool/gpio/13"
+  state_topic: "poolControl_88/relay1/state"
+  command_topic: "poolControl_88/gpio/16"
   payload_on: "0"
   payload_off: "1"
+  state_on: "0.00"
+  state_off: "1.00"
   optimistic: false
   qos: 0
   retain: true
@@ -90,34 +103,75 @@
 
 - platform: mqtt
   name: "Pool Pump"
-  state_topic: "/Pool/gpio/12"
-  command_topic: "/Pool/gpio/12"
+  state_topic: "poolControl_88/relay2/state"
+  command_topic: "poolControl_88/gpio/0"
   payload_on: "0"
   payload_off: "1"
+  state_on: "0.00"
+  state_off: "1.00"
   optimistic: false
   qos: 0
   retain: true
 
 - platform: mqtt
   name: "Chlorine Generator"
-  state_topic: "/Pool/gpio/14"
-  command_topic: "/Pool/gpio/14"
-  payload_on: "1"
-  payload_off: "0"
+  state_topic: "poolControl_88/relay3/state"
+  command_topic: "poolControl_88/gpio/2"
+  payload_on: "0"
+  payload_off: "1"
+  state_on: "0.00"
+  state_off: "1.00"
   optimistic: false
   qos: 0
   retain: true
   
 - platform: mqtt
   name: "Pool Cleaner"
-  state_topic: "/Pool/gpio/15"
-  command_topic: "/Pool/gpio/15"
-  payload_on: "1"
-  payload_off: "0"
+  state_topic: "poolControl_88/relay4/state"
+  command_topic: "poolControl_88/gpio/14"
+  payload_on: "0"
+  payload_off: "1"
+  state_on: "0.00"
+  state_off: "1.00"
   optimistic: false
   qos: 0
   retain: true
 
+- platform: mqtt
+  name: "Pool Speed"
+  state_topic: "poolControl_88/relay5/state"
+  command_topic: "poolControl_88/gpio/12"
+  payload_on: "0"
+  payload_off: "1"
+  state_on: "0.00"
+  state_off: "1.00"
+  optimistic: false
+  qos: 0
+  retain: true
+
+- platform: mqtt
+  name: "Pool Future 1"
+  state_topic: "poolControl_88/relay6/state"
+  command_topic: "poolControl_88/gpio/13"
+  payload_on: "0"
+  payload_off: "1"
+  state_on: "0.00"
+  state_off: "1.00"
+  optimistic: false
+  qos: 0
+  retain: true
+
+- platform: mqtt
+  name: "Pool Future 2"
+  #state_topic: "poolControl_88/relay2/state"
+  command_topic: "poolControl_88/gpio/1"
+  payload_on: "0"
+  payload_off: "1"
+  #state_on: "0.00"
+  #state_off: "1.00"
+  optimistic: false
+  qos: 0
+  retain: true
   
 - platform: mqtt
   name: "3d Printer Power Old"

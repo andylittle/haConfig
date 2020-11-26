@@ -1,27 +1,27 @@
 - platform: mqtt
   name: "Hot Water Temp In"
-  state_topic: "/hotwater/hwTempIn/Temperature"
+  state_topic: "hotwater_10/hwTempIn/Temperature"
   unit_of_measurement: '°C'
 - platform: mqtt
   name: "Hot Water Temp Out"
-  state_topic: "/hotwater/hwTempOut/Temperature"
+  state_topic: "hotwater_10/hwTempOut/Temperature"
   unit_of_measurement: '°C'
 - platform: mqtt
   name: "Cold Water Temp In"
-  state_topic: "/hotwater/cwTempIn/Temperature"
+  state_topic: "hotwater_10/cwTempIn/Temperature"
   unit_of_measurement: '°C'
 - platform: mqtt
   name: "Master Shower Temp"
-  state_topic: "/hotwater/dsShowerTemp/Temperature"
+  state_topic: "hotwater_10/dsShowerTemp/Temperature"
   unit_of_measurement: '°C'
 
 - platform: mqtt
   name: "Pool Pressure"
-  state_topic: "/Pool/atd0/Analog0"
+  state_topic: "poolControl_88/atd0/Analog0"
   unit_of_measurement: '°C'
 - platform: mqtt
   name: "Cleaner Pressure"
-  state_topic: "/Pool/atd1/Analog1"
+  state_topic: "poolControl_88/atd1/Analog1"
   unit_of_measurement: '°C'
 
 - platform: mqtt
@@ -69,13 +69,13 @@
 
 - platform: mqtt
   name: "Outside Temp"
-  state_topic: "rtl_433/orangepi0-1/devices/HIDEKI_TS04_sensor/1/temperature_C"
+  state_topic: "rtl_433/orangepi0-1/devices/Hideki-TS04/1/14/temperature_C"
   unit_of_measurement: '°C'
   value_template: '{{value | round(1) }}' 
 
 - platform: mqtt
   name: "Deep Freeze"
-  state_topic: "rtl_433/orangepi0-1/devices/Acurite_986_Sensor/2F/9534/temperature_F"
+  state_topic: "rtl_433/orangepi0-1/devices/Acurite-986/2F/9534/temperature_F"
 
   ###  3575 changes on  power cycle rtl_433/orangepi0-1/devices/Acurite_986_Sensor/1R/3575/temperature_F
   ###                               rtl_433/orangepi0-1/devices/Acurite_986_Sensor/2F/9534/temperature_F
@@ -83,13 +83,13 @@
   value_template: '{{value | round(1) }}' 
 - platform: mqtt
   name: "Freezer Temp"
-  state_topic: "rtl_433/orangepi0-1/devices/Acurite_986_Sensor/1R/3575/temperature_F"
+  state_topic: "rtl_433/orangepi0-1/devices/Acurite-986/1R/3575/temperature_F"
   unit_of_measurement: '°F'
   value_template: '{{value | round(1) }}' 
 
 - platform: mqtt
   name: "Fridge Temp"
-  state_topic: "rtl_433/orangepi0-1/devices/Acurite_tower_sensor/B/9748/temperature_C"
+  state_topic: "rtl_433/orangepi0-1/devices/Acurite-Tower/B/9748/temperature_C"
   unit_of_measurement: '°C'
 
 - platform: filter
@@ -108,49 +108,49 @@
 
 - platform: mqtt
   name: "Fridge Humid"
-  state_topic: "rtl_433/orangepi0-1/devices/Acurite_tower_sensor/B/9748/humidity"
+  state_topic: "rtl_433/orangepi0-1/devices/Acurite-Tower/B/9748/humidity"
   unit_of_measurement: '%'
 
 
 - platform: mqtt
   name: "6692t"
-  state_topic: "rtl_433/orangepi0-1/devices/Acurite_tower_sensor/A/6692/temperature_C"
+  state_topic: "rtl_433/orangepi0-1/devices/Acurite-Tower/A/6692/temperature_C"
   unit_of_measurement: '°C'
   value_template: '{{value | round(1) }}' 
 
 - platform: mqtt
   name: "6692h"
-  state_topic: "rtl_433/orangepi0-1/devices/Acurite_tower_sensor/A/6692/humidity"
+  state_topic: "rtl_433/orangepi0-1/devices/Acurite-Tower/A/6692/humidity"
   unit_of_measurement: '%'
   value_template: '{{value | round(1) }}' 
 - platform: mqtt
   name: "6312t"
-  state_topic: "rtl_433/orangepi0-1/devices/Acurite_tower_sensor/A/6312/temperature_C"
+  state_topic: "rtl_433/orangepi0-1/devices/Acurite-Tower/A/6312/temperature_C"
   unit_of_measurement: '°C'
   value_template: '{{value | round(1) }}' 
 - platform: mqtt
   name: "6312h"
-  state_topic: "rtl_433/orangepi0-1/devices/Acurite_tower_sensor/A/6312/humidity"
+  state_topic: "rtl_433/orangepi0-1/devices/Acurite-Tower/A/6312/humidity"
   unit_of_measurement: '%'
   value_template: '{{value | round(1) }}' 
 - platform: mqtt
   name: "12391t"
-  state_topic: "rtl_433/orangepi0-1/devices/Acurite_tower_sensor/B/12391/temperature_C"
+  state_topic: "rtl_433/orangepi0-1/devices/Acurite-Tower/B/12391/temperature_C"
   unit_of_measurement: '°C'
   value_template: '{{value | round(1) }}' 
 - platform: mqtt
   name: "12391h"
-  state_topic: "rtl_433/orangepi0-1/devices/Acurite_tower_sensor/B/12391/humidity"
+  state_topic: "rtl_433/orangepi0-1/devices/Acurite-Tower/B/12391/humidity"
   unit_of_measurement: '%'
   value_template: '{{value | round(1) }}' 
 - platform: mqtt
   name: "14789t"
-  state_topic: "rtl_433/orangepi0-1/devices/Acurite_tower_sensor/A/14789/temperature_C"
+  state_topic: "rtl_433/orangepi0-1/devices/Acurite-Tower/A/14789/temperature_C"
   unit_of_measurement: '°C'
   value_template: '{{value | round(1) }}' 
 - platform: mqtt
   name: "14789h"
-  state_topic: "rtl_433/orangepi0-1/devices/Acurite_tower_sensor/A/14789/humidity"
+  state_topic: "rtl_433/orangepi0-1/devices/Acurite-Tower/A/14789/humidity"
   unit_of_measurement: '%'
   value_template: '{{value | round(1) }}' 
 
@@ -182,29 +182,13 @@
       precision: 2
 
 - platform: mqtt
-  name: "AQ Temperature 1"
-  state_topic: "/d1mini-2/bmp280/Temperature"
+  name: "Turtle Bask"
+  state_topic: "/d1mini-2/bask/Temperature"
   unit_of_measurement: '°C'
 - platform: mqtt
-  name: "AQ Pressure 1"
-  state_topic: "/d1mini-2/bmp280/Pressure"
-  unit_of_measurement: 'MB'
-- platform: mqtt
-  name: "AQ Quality 1" 
-  state_topic: "/d1mini-2/ads1/airquality"
-  unit_of_measurement: 'MB'
-- platform: mqtt
-  name: "AQ Temperature 2"
-  state_topic: "/d1mini-2/bme280/Temperature"
+  name: "Turtle Water"
+  state_topic: "/d1mini-2/tank/Temperature"
   unit_of_measurement: '°C'
-- platform: mqtt
-  name: "AQ Pressure 2"
-  state_topic: "/d1mini-2/bme280/Pressure"
-  unit_of_measurement: 'MB'
-- platform: mqtt
-  name: "AQ Humidity 2"
-  state_topic: "/d1mini-2/bme280/Humidity"
-  unit_of_measurement: '%'
 
 - platform: apcupsd
   resources:

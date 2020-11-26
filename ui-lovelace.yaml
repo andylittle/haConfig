@@ -53,17 +53,17 @@ views:
         title: Garmin Steps
         
       - type: history-graph
-        entities:
-          - sensor.max_stress_level
-          - sensor.medium_stress_duration
-          - sensor.rest_stress_duration
-          - sensor.activity_stress_duration
-          - sensor.avg_stress_level
-          - sensor.high_stress_duration
-          - sensor.low_stress_duration
-          - sensor.total_stress_duration
-          - sensor.uncat_stress_duration
         title: Garmin Stress
+        entities:
+          - sensor.avg_stress_level
+          - sensor.max_stress_level
+                #- sensor.medium_stress_duration
+            ## - sensor.rest_stress_duration
+            #- sensor.activity_stress_duration
+            #- sensor.high_stress_duration
+            #- sensor.low_stress_duration
+            #- sensor.total_stress_duration
+         #- sensor.uncat_stress_duration
 
       - type: history-graph
         entities:
@@ -175,6 +175,7 @@ views:
       - type: entities
         entities:
           - switch.coop_door
+          - switch.coop_door_new
           - switch.relay_1
           - switch.relay_2
           - switch.relay_3
@@ -186,9 +187,6 @@ views:
           - switch.shop_center  
           - switch.shop_north  
           - switch.shop_south
-          - sensor.centralite_3210_l_cc10a60c_electrical_measurement
-          - switch.centralite_3210_l_cc10a60c_on_off
-          - sensor.centralite_3210_l_cc10a60c_smartenergy_metering  
         title: Garden
         show_header_toggle: true
   - path: device_tracker
@@ -260,12 +258,6 @@ views:
     cards:
       - type: entities
         entities:
-          - sensor.aq_temperature_1
-          - sensor.aq_pressure_1
-          - sensor.aq_quality_1
-          - sensor.aq_temperature_2
-          - sensor.aq_pressure_2
-          - sensor.aq_humidity_2
           - sensor.battery_current
           - sensor.battery_voltage
           - sensor.battery_power
@@ -285,12 +277,25 @@ views:
         show_header_toggle: true
       - type: entities
         entities:
+          - sensor.turtle_bask
+          - sensor.turtle_water
+          - sensor.centralite_3210_l_cc10a60c_electrical_measurement
+          - switch.centralite_3210_l_cc10a60c_on_off
+        title: Turtle
+        show_header_toggle: false
+      - type: entities
+        entities:
           - binary_sensor.ender_3_pro_printing
           - binary_sensor.ender_3_pro_printing_error
           - sensor.ender_3_pro_current_state
           - sensor.ender_3_pro_job_percentage
           - switch.printer_power
-        title: Ender
+
+      - type: history-graph
+        entities:
+          - sensor.turtle_water
+          - sensor.turtle_bask
+        title: Turtle 
         show_header_toggle: true
       - type: picture-entity
         entity: camera.octoprint
@@ -300,6 +305,9 @@ views:
           - switch.pool_cleaner
           - switch.chlorine_generator
           - switch.pool_drain
+          - switch.pool_speed
+          - switch.pool_future_1
+          - switch.pool_future_2
           - sensor.pool_pressure
           - sensor.cleaner_pressure
         title: pool
